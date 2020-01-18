@@ -94,9 +94,12 @@
 	.sidebar-nav {
 		text-align: left;
 		list-style: none;
-		margin-bottom: 2rem;
-		margin-top: 2rem;
-		padding-left: 0;
+		margin-bottom: 1rem;
+		margin-top: 0rem;
+		padding-left: 5%;
+	}
+	.site__description {
+		font-size: 1.1rem;
 	}
 	.content a {
 		color: #1E8CBE;
