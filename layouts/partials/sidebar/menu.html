@@ -1,7 +1,7 @@
 <div>
 	<ul class="sidebar-nav">
-		{{ $currentPage := . }} 
-		{{ range .Site.Menus.main }} 
+		{{ $currentPage := . }}
+		{{ range .Site.Menus.main }}
 			{{ if .HasChildren }}
 			<li {{ if $currentPage.HasMenuCurrent "main" . }}class="active"{{ end }}>
 				<a href="#">{{ .Pre }}
@@ -21,7 +21,15 @@
 						<span>{{ .Name | title }}</span>
 					</a>
 				</li>
-			{{ end }} 
+			{{ end }}
+		{{ end }}
+		{{ range .Site.Menus.planet }}
+			<br>Planet:
+				<li>
+					<a href="{{.URL}}" target="_blank">{{ .Pre }}
+						<span>{{ .Name | title }}</span>
+					</a>
+				</li>
 		{{ end }}
 	</ul>
 </div>
