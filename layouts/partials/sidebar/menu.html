@@ -1,35 +1,42 @@
 <div>
-	<ul class="sidebar-nav">
-		{{ $currentPage := . }}
-		{{ range .Site.Menus.main }}
-			{{ if .HasChildren }}
-			<li {{ if $currentPage.HasMenuCurrent "main" . }}class="active"{{ end }}>
-				<a href="#">{{ .Pre }}
-					<span>{{ .Name }}</span>
-				</a>
-				<ul class="sidebar-nav">
-					{{ range .Children }}
-					<li {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
-						<a href="{{ .URL }}">{{ .Name | title }}</a>
+	<section>
+		<ul class="sidebar-nav">
+			{{ $currentPage := . }}
+			{{ range .Site.Menus.main }}
+				{{ if .HasChildren }}
+				<li {{ if $currentPage.HasMenuCurrent "main" . }}class="active"{{ end }}>
+					<a href="#">{{ .Pre }}
+						<span>{{ .Name }}</span>
+					</a>
+					<ul class="sidebar-nav">
+						{{ range .Children }}
+						<li {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
+							<a href="{{ .URL }}">{{ .Name | title }}</a>
+						</li>
+						{{ end }}
+					</ul>
+				</li>
+				{{ else }} <!-- No children -->
+					<li>
+						<a href="{{.URL}}">{{ .Pre }}
+							<span>{{ .Name | title }}</span>
+						</a>
 					</li>
-					{{ end }}
-				</ul>
-			</li>
-			{{ else }} <!-- No children -->
-				<li>
-					<a href="{{.URL}}">{{ .Pre }}
-						<span>{{ .Name | title }}</span>
-					</a>
-				</li>
+				{{ end }}
 			{{ end }}
-		{{ end }}
-		{{ with .Site.Menus.planet }} <br>Planet:{{ end }}
+		</ul>
+	</section>
+	{{ if .Site.Menus.planet }}
+	<section>
+		<ul class="sidebar-nav">
+		Planet:
 		{{ range .Site.Menus.planet }}
-				<li>
-					<a href="{{.URL}}" target="_blank">{{ .Pre }}
-						<span>{{ .Name | title }}</span>
-					</a>
-				</li>
+			<li>
+				<a href="{{.URL}}" target="_blank">{{ .Pre }}
+					<span>{{ .Name | title }}</span>
+				</a>
+			</li>
 		{{ end }}
-	</ul>
+	</section>
+{{ end }}
 </div>
