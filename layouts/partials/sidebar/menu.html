@@ -1,5 +1,4 @@
 <div>
-	<section>
 		<ul class="sidebar-nav">
 			{{ $currentPage := . }}
 			{{ range .Site.Menus.main }}
@@ -25,9 +24,7 @@
 				{{ end }}
 			{{ end }}
 		</ul>
-	</section>
 	{{ if .Site.Menus.planet }}
-	<section>
 		<ul class="sidebar-nav">
 		Planet:
 		{{ range .Site.Menus.planet }}
@@ -37,6 +34,6 @@
 				</a>
 			</li>
 		{{ end }}
-	</section>
+		</ul>
 {{ end }}
 </div>
