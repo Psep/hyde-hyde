@@ -1,4 +1,4 @@
-<div>
+<div class="sidemenu">
 		<ul class="sidebar-nav">
 			{{ $currentPage := . }}
 			{{ range .Site.Menus.main }}
@@ -25,8 +25,8 @@
 			{{ end }}
 		</ul>
 	{{ if .Site.Menus.planet }}
-		<ul class="sidebar-nav">
 		Planet:
+		<ul class="sidebar-nav">
 		{{ range .Site.Menus.planet }}
 			<li>
 				<a href="{{.URL}}" target="_blank">{{ .Pre }}
