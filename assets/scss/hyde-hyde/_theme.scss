@@ -113,11 +113,11 @@
 	.img-autor{
 		max-width: 80%;
 	}
-	img[src*="post"] {
+	img[src*="#post"] {
 		display:block;
 		margin:auto;
 	}
-	img[src~="border"] {
+	img[src~="#border"] {
   	border: 1px solid black;
 	}
 }
